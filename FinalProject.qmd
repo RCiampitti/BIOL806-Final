@@ -1,1 +1,4 @@
 # Atlantic White Cedar Regeneration Data
+
+  #I am going to do a Simpson diversity index to look at the diversity of associated vegetation species between sites
+  #I also want to do a PCA to find out which/which combination of my many variables results in AWC seedling recruitment
