@@ -1,0 +1,289 @@
+---
+title: "Interaction between multiple ecological factors and Atlantic White Cedar seedling recruitment in an inland freshwater wetland"
+author: "Reece Ciampitti"
+format: pdf
+editor: visual
+---
+
+### Introduction
+
+Atlantic White Cedar (*Chamaecyparis thyoides*) is a foundational species in wetland ecosystems along the U.S. Atlantic and Gulf coasts. These cedar wetlands, found in a narrow band along the coastline, provide vital ecosystem services, including water filtration, carbon sequestration, and habitat for diverse wildlife (Kuser and Zimmermann 1995, Haas and Kuser 2003). As an obligate wetland species, Atlantic White Cedar thrives in environments with specific hydrological conditions, including acidic soils and partially inundated soils​ (Sedia et al. 2021, Little and Garrett 1990). However, Atlantic White Cedar has experienced significant declines due to a combination of habitat destruction, drainage for agriculture, logging, and altered fire regimes (Laderman 1989, Kuser and Zimmermann 1995, Ward 1989). The remaining populations of Atlantic White Cedar are now restricted to fragmented wetland areas, and the species faces challenges related to regeneration in these disturbed environments (Laidig and Zampella, 1999). Despite its ecological importance, the regeneration of this species is also hindered by environmental stressors such as moisture fluctuations, salinity, competition with other species, and reduced light availability in some areas (Sedia et al. 2021, Jull et al. 1999, Gengarelly and Lee 2005).
+
+Established research on Atlantic White Cedar\'s recruitment has focused on the species\' regeneration in response to climate change, primarily sea level rise. AWC seedlings have been found to be highly sensitive to low salt concentrations and continuous flooding, showing up to a 100% seedling mortality rate when flooded with as little as 0.2% salt water (Sedia et al., 2021). Elevation of seedlings relative to the water table also plays a crucial role, with seedlings performing better at higher elevations where they are less susceptible to prolonged inundation (Gengarelly and Lee, 2005). These environmental interactions highlight the challenges faced by coastal AWC stands, though fail to address the factors that influence regeneration in more inland cedar stands. An additional gap in the established literature on AWC swamp ecosystems is in the soil microbiome of the ecosystem, and how it may play a role in seedling health and recruitment. Soil microbial diversity and composition are highly influential on seedling establishment by enhancing nutrient availability and supporting plant health (Frąc et al. 2018, Baldrian 2017), and could therefore be a critical and as of yet unstudied component in AWC regeneration. 
+
+Through integrating research on soil chemistry, canopy density, photoperiod, temperature, vegetation species composition, competition, and eventually microbial diversity, my study aims to provide a comprehensive understanding of the factors that influence AWC seedling recruitment and growth in an inland cedar wetland ecosystem. Ultimately, this work aims to contribute to the development of management strategies that incorporate environmental factors and microbial interactions to promote the successful restoration of Atlantic White Cedar wetlands, ultimately supporting both ecological health and the recovery of this critical species.
+
+### Methods
+
+36 circular plots, five meters in radius, were randomly established in the Bradford Bog in Bradford, NH, of which 24 were experimental (12 open canopy plots and 12 closed canopy plots) with presence of AWC seedlings, and 12 control plots without AWC seedlings. Canopy density (in percent canopy occupied by tree foliage) was measured using a spherical densiometer, in which canopy density measurements were taken from each cardinal direction about 1/2 meter from the center of the plot and averaged together for the final percent canopy coverage value. A vegetation species assemblage and abundance assessment was taken in each plot for both the ground (within one meter of the plot\'s center) and shrub (within three meters of the plot\'s center) foliage (measured in % cover of each species).  This was performed by setting a meter tape from the center of the plot out to the respective survey limit and visually assessing the percent cover of each vegetation species in the concentric circular area (including bare ground area for the ground veg assessment). As part of this survey, the number of AWC seedlings was counted within each plot within one meter from the plot\'s center. To gauge the degree of growth of AWC seedlings, a one square meter quadrat was randomly thrown within the plot twice, and the height and diameter of the individual AWC seedlings captured in each throw were measured with a meter stick and caliper, respectively. Pore Water was collected in each plot and pH and redox potentials were measured. Onset Hobo ™ light and temperature loggers were fastened to the wooden plot center post, positioned on the forest floor and set to record data every 15 minutes over the course of the monitoring period (June - October 2024). Sediment cores were exhumed at each plot to a maximum depth of 1m. Cores will be sampled for live roots, bulk density, percent organics, and the presence of microplastics. DBH was measured for all mature trees within a radius of 5m from the center of the plot, and their respective tree species were recorded. Finally, surface soil samples were collected at each site for later DNA extraction and metagenomic analysis using the Qiagen Microbiome DNA extraction kit. 
+
+Statistical analyses were performed using R v4.4.1, with all visualizations except for PCA utilizing the ggplot2 package. To explore the relationship between canopy cover and Atlantic White Cedar seedling density, a Poisson regression model was implemented using the glm function, with canopy percentage cover as the predictor variable. Observed and predicted values were visualized as a scatterplot. To examine plant diversity across experimental site types, the Simpson diversity index was calculated using the diversity function of the vegan package (Oksanen et al., 2024) and visualized as boxplots. Normality and homoscedasticity of variances were verified using the qqPlot (Shapiro-Wilk test) and leveneTest (Levene\'s test) functions of the car package (Fox and Weisberg, 2019), confirming the assumptions for a one-way ANOVA using the aov function. Ground vegetation species were grouped into ecologically meaningful categories to create simplified stacked bar plots of proportional cover normalized by experimental site type. Microsite conditions across sites were explored via Principal Component Analysis (PCA) with the rda function of the vegan package (Oksanen et al., 2024), using Hellinger-transformed data. This was visualized as a biplot in which points were colored by site type and vectors represented five different microsite conditions.
+
+### Results and Discussion
+
+The relationship between canopy cover percentage and Atlantic White Cedar seedling count was statistically significant, as shown in Figure 1. The Poisson generalized linear model revealed a positive association, with canopy cover percentage significantly predicting seedling abundance (p \< 0.05). This suggests that denser canopy areas provide favorable conditions for AWC recruitment, possibly through moderating microclimatic variables like temperature and moisture retention (Jull et al., 1999). It is also likely, however, that the outlier in seedling abundance at site 11 (AWC Seedling Count = 67) disproportionately affects the regression, thereby skewing the p value towards significance. 
+
+Vegetation diversity, as represented by Simpson's diversity index, did not differ significantly among the three experimental treatments (p = 0.162) (Figure 2). However, closed canopy areas tended to have slightly higher vegetation diversity, although the difference was not statistically significant. This result suggests that vegetation composition may play a more critical role than diversity alone in influencing AWC regeneration. The higher diversity observed in some treatments could reflect the coexistence of AWC seedlings with other species under specific canopy conditions, potentially reducing competition. The proportional vegetation analysis (Figure 3) illustrates this interplay between vegetation community composition and AWC regeneration, as closed canopy areas had a higher proportion of AWC seedlings and Bare area compared to open and control treatments. Principal Component Analysis (Figure 4) further supported this observation, showing that canopy cover, redox potential, and pH strongly influence the spatial distribution of seedlings and experimental treatments. Closed canopy sites appear to select against plant species that require high-light conditions, thereby eliminating them from the microsite (seen in the Sedge group), reducing competition and creating favorable light and soil conditions conducive to AWC seedling recruitment. 
+
+Collectively, these findings emphasize the need for forest management strategies that maintain or restore closed canopy conditions to optimize AWC recruitment. Though not represented in the current data used for this project, temperature, photoperiod, canopy species composition, and soil microbiome are also being examined as a part of my thesis, and would likely refine the ecological mechanisms behind higher AWC seedling recruitment under greater canopy density.
+
+```{r include = FALSE}
+library(tidyverse)
+library(ggplot2)
+library(readr)
+library(vegan)
+library(car)
+library(ggtext)
+
+Regeneration_data <- read_csv("AWC_Regeneration_Data.csv")
+```
+
+## 
+
+```{r echo = FALSE}
+CanopyCovervsSeedlingCount <- Regeneration_data %>%
+  filter(Experimental_Type %in% c('CC', 'OC', 'Control')) %>%
+  #filter(!(Plot == 11)) %>%
+  select(Experimental_Type, Plot, CanopyPCover, AWC_in_1m) %>%
+  mutate(CanopyPCover = as.numeric(CanopyPCover))
+
+poisson_model <- glm(AWC_in_1m ~ CanopyPCover, data = CanopyCovervsSeedlingCount, family = "poisson")
+
+#summary(poisson_model)
+
+# Adding the predicted values to the dataset so that I can make a figure
+CanopyCovervsSeedlingCount <- CanopyCovervsSeedlingCount %>%
+  mutate(Predicted_AWC = predict(poisson_model, type = "response"))
+
+ggplot(data = CanopyCovervsSeedlingCount, aes(x = CanopyPCover, y = AWC_in_1m)) +
+  geom_point(color = "blue") + # Observed values
+  geom_line(aes(y = Predicted_AWC), color = "red") + # Predicted values
+  labs(x = 'Canopy % Cover', y = 'AWC Seedling Count') +
+  theme_minimal() +
+  geom_text(x = 19, y = 65, label = "P-value = 0.00449")
+```
+
+##### **Figure 1.** AWC seedling count (within 1m radius of the plot center) vs canopy percent cover. Red line shows predicted trend as determined by the Poisson generalized linear model.
+
+```{r include = FALSE}
+#Experimental Type vs Seedling Count
+
+CanopyCovervsSeedlingCount$Experimental_Type <- factor(CanopyCovervsSeedlingCount$Experimental_Type, 
+                                         levels = c("OC", "CC"),
+                                         labels = c("Open Canopy", "Closed Canopy"))
+
+ggplot(data = CanopyCovervsSeedlingCount, aes(x = Experimental_Type, y = AWC_in_1m)) +
+  geom_boxplot() +
+  labs(x = 'Experimental Type', y = 'AWC Seedling Count') +
+  theme_minimal()
+```
+
+## 
+
+```{r echo = FALSE}
+#Data subset with only ground veg cover data (Excluding Bare area)
+VegAssemblage <- Regeneration_data[1:36, 20:44]
+  
+# Calculate Simpson Diversity Index using vegan's diversity() function
+Simpson_Index <- diversity(as.matrix(VegAssemblage), index = "simpson")
+
+# Add the Simpson Diversity Index as a new column to the complete data subset
+VegAComplete <- Regeneration_data[1:36, c(3, 4, 6, 19:45, 60, 61)]
+VegAComplete$Simpson_Index <- Simpson_Index
+
+VegAComplete$Experimental_Type <- factor(VegAComplete$Experimental_Type, 
+                        levels = c("Control", "OC", "CC"),  # Original levels
+                        labels = c("Control", "Open Canopy", "Closed Canopy"))  # New names
+
+ggplot(data = VegAComplete, aes(x = Experimental_Type, y = Simpson_Index)) +
+  geom_boxplot() +
+  labs(x = 'Experimental Type', y = 'Simpson Diversity Value') +
+  theme_minimal()
+```
+
+##### **Figure 2.** Simpson diversity index for ground vegetation across the three plot types (Control, Open Canopy, Closed Canopy).
+
+### 
+
+```{r include = FALSE}
+#ANOVA
+
+qqPlot(VegAComplete$Simpson_Index)
+# data is normally distributed
+
+leveneTest(VegAComplete$Simpson_Index ~ VegAComplete$Experimental_Type)
+# Pvalue > 0.05: can't reject null hypothesis so the variances are equal (homoscedastic)
+
+one.way <- aov(Simpson_Index ~ Experimental_Type, data = VegAComplete)
+summary(one.way)
+# We cannot reject the null hypothesis because the p value is > 0.05 (p = 0.162)
+```
+
+### 
+
+```{r include = FALSE}
+#Wilcoxon Rank Sum Test - No longer relevant: data is normally distributed
+
+control_vs_oc <- subset(VegAComplete, Experimental_Type %in% c("Control", "Open Canopy"))
+control_vs_cc <- subset(VegAComplete, Experimental_Type %in% c("Control", "Closed Canopy"))
+oc_vs_cc <- subset(VegAComplete, Experimental_Type %in% c("Open Canopy", "Closed Canopy"))
+
+# Wilcoxon rank sum tests
+# Control vs Open Canopy
+wilcox_control_oc <- wilcox.test(Simpson_Index ~ Experimental_Type, data = control_vs_oc)
+# Control vs Closed Canopy
+wilcox_control_cc <- wilcox.test(Simpson_Index ~ Experimental_Type, data = control_vs_cc)
+# Open Canopy vs Closed Canopy
+wilcox_oc_cc <- wilcox.test(Simpson_Index ~ Experimental_Type, data = oc_vs_cc)
+
+test_results <- data.frame(
+  Comparison = c("Control vs Open Canopy", 
+                 "Control vs Closed Canopy", 
+                 "Open Canopy vs Closed Canopy"),
+  W_Statistic = c(wilcox_control_oc$statistic, 
+                  wilcox_control_cc$statistic, 
+                  wilcox_oc_cc$statistic),
+  P_Value = c(wilcox_control_oc$p.value, 
+              wilcox_control_cc$p.value, 
+              wilcox_oc_cc$p.value)
+)
+
+library(knitr)
+kable(test_results, caption = "Wilcoxon Rank Sum Test Results")
+
+#Of all the tests, only the Control vs Closed Canopy group had a p value < 0.05, and therefore shows a statistically significant difference in the overall diversity between the Control study plots and the Closed Canopy study plots.
+```
+
+## 
+
+```{r include = FALSE}
+# The following is Proportion by Species: not opted for since the visualization is more confusing
+
+species_data <- Regeneration_data[1:36, c(3, 20:45)] # Capture the Experimental type, Plot, and Species
+species_data_long <- species_data %>%
+  pivot_longer(cols = -Experimental_Type, names_to = "Species", values_to = "Proportion") %>%
+  group_by(Experimental_Type) %>%
+  mutate(Proportion = Proportion / sum(Proportion, na.rm = TRUE))  # Normalize to proportions
+
+species_data_long$Experimental_Type <- factor(species_data_long$Experimental_Type, 
+                                         levels = c("Control", "OC", "CC"),
+                                         labels = c("Control", "Open Canopy", "Closed Canopy"))
+# Create the stacked bar plot
+ggplot(species_data_long, aes(x = Experimental_Type, y = Proportion, fill = Species)) +
+  geom_bar(stat = "identity") +
+  labs(x = "Experimental Type",
+       y = "Proportion",
+       fill = "Species") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+```{r echo = FALSE}
+# The following organizes indivudal species into groups, making the stacked bar plot easier to read and interpret
+
+species_data <- Regeneration_data[1:36, c(3, 20:45)]  # Experimental type, Plot, and Species
+
+# Define species groupings
+species_groupings <- list(
+  `AWC Seedling` = c("AWC", "AWC...35"),
+  Bare = c("BARE"),
+  `Conifer Seedling` = c("Black Spruce", "Eastern Hemlock"),
+  `Hardwood Seedling` = c("Red Maple", "Red Oak"),
+  Sedge = c("THINSEDGE", "UNKSEDGE"),
+  Shrub = c("ILF (Ilex mucronata)", "Leatherleaf...41", "Lowbush Blueberry", "Swamp Azalea"),
+  Moss = c("Greater Whipwort", "Spagnum Moss"),
+  `Tall Herbaceous` = c("Cinnamon Fern", "Sasparilla"),
+  `Low Growing Plants` = c(
+    "Bunchberry", "Canada mayflower", "Creeping Snowberry",
+    "Dewberry", "Dewdrop", "Goldthread", "Partridgeberry",
+    "Starflower", "Sundew", "Wintergreen"
+  )
+)
+
+# Convert the groupings to a table
+species_mapping <- stack(species_groupings)
+colnames(species_mapping) <- c("Species", "Group")
+
+# Pivot data to long format
+species_data_long <- species_data %>%
+  pivot_longer(cols = -Experimental_Type, names_to = "Species", values_to = "Proportion") %>%
+  left_join(species_mapping, by = "Species") %>%  # Add group information
+  group_by(Experimental_Type, Group) %>%
+  summarise(Proportion = sum(Proportion, na.rm = TRUE), .groups = "drop") %>%  # Summarize by group
+  group_by(Experimental_Type) %>%
+  mutate(Proportion = Proportion / sum(Proportion, na.rm = TRUE))  # Normalize to proportions
+
+# Adjust Experimental Type labels
+species_data_long$Experimental_Type <- factor(
+  species_data_long$Experimental_Type,
+  levels = c("Control", "OC", "CC"),
+  labels = c("Control", "Open Canopy", "Closed Canopy")
+)
+
+# Stacked bar plot
+ggplot(species_data_long, aes(x = Experimental_Type, y = Proportion, fill = Group)) +
+  geom_bar(stat = "identity") +
+  labs(
+    x = "Experimental Type",
+    y = "Proportion",
+    fill = "Ground Vegetation Type"
+  ) +
+  theme_minimal()
+
+```
+
+##### **Figure 3. Stacked bar plot of the proportion of major ground cover types across the three plot types.**
+
+## 
+
+```{r echo = FALSE}
+CondensedData <- VegAComplete[1:36, c(3, 4, 31:33)]
+
+# Perform PCA
+pca <- rda(decostand(CondensedData, method = "hellinger"), scale = TRUE, center = TRUE)
+
+# Extract the Experimental_Type column as a vector
+Experimental_Type <- VegAComplete$Experimental_Type[1:36]
+
+# Assign colors to each Experimental_Type
+type_colors <- as.factor(Experimental_Type)
+color_palette <- c("red", "blue", "green")  # Define your color palette
+point_colors <- color_palette[as.numeric(type_colors)]
+
+# Biplot with colored points
+biplot(pca, scaling = "symmetric", display = "species")
+points(scores(pca, display = "sites"), 
+       col = point_colors, pch = 19)  # Add colored points for sites
+legend("topright", legend = levels(type_colors), 
+       col = color_palette, pch = 19, cex = 0.8)
+```
+
+##### **Figure 4.** PCA biplot based on Hellinger-standardized species data, with points colored by experimental type. Vectors represent the tested microsite conditions (AWC seedling count, Simpson diversity, Porewater pH, Canopy % cover, Porewater redox potential).
+
+### References
+
+Baldrian, P. (2017). Forest microbiome: diversity, complexity, and dynamics. FEMS Microbiology Reviews, 41, 109--130. 
+
+Fox J, Weisberg S (2019). An R Companion to Applied Regression, Third edition. Sage, Thousand Oaks CA. https://www.john-fox.ca/Companion/.
+
+Frąc, M., Hannula, S. E., Bełka, M., & Jędryczka, M. (2018). Fungal biodiversity and their role in Soil Health. Frontiers in Microbiology, 9. https://doi.org/10.3389/fmicb.2018.00707 
+
+Gengarelly, L.M., & Lee, T.D. (2005). The role of microtopography and substrate in survival and growth of Atlantic white-cedar seedlings. Forest Ecology and Management, 212(1), 135--144. doi:10.1016/j.foreco.2005.03.009. 
+
+Haas, M. J., & Kuser, J. E. (2003). Establishment of Chamaecyparis thyoides on an Extremely Low-Nutrient Sandy Site on the Atlantic Coastal Plain, U.S.A. Restoration Ecology, 11(2): 231-238. 
+
+Jull, L. G., Blazich, F. A., & Hinesley, L. E. (1999). Seed Germination of Two Provenances of Atlantic White-Cedar as Influenced by Stratification, Temperature, and Light. Journal of Environmental Horticulture, 17(4): 158-163. 
+
+Kuser, J. E., & Zimmermann, G. L. (1995). Restoring Atlantic White-Cedar Swamps: Techniques for Propagation and Establishment. Tree Planter's Notes, 46(3): 78-85.  
+
+Laderman, A. D. (1989). The ecology of Atlantic white cedar wetlands: a community profile. U.S. Fish Wildl. Serv. Biol. Rep. 85(7.21). 114 pp. 
+
+Laidig, K. J., & Zampella, R. A. (1999). Community Attributes of Atlantic White Cedar (Chamaecyparis thyoides) Swamps in Disturbed and Undisturbed Pinelands Watersheds. Wetlands, 19(1), 35-49. 
+
+Little, S., & Garrett, P.W. (1990). Chamaecyparis thyoides (L.) B.S.P. Atlantic White-Cedar. In R.M. Burns & B.H. Honkala (Tech. Coordinators), Silvics of North America. Vol. 1: Conifers (pp. 103--108). U.S. Department of Agriculture, Forest Service, Agricultural Handbook 654. 
+
+Oksanen J, Simpson G, Blanchet F, Kindt R, Legendre P, Minchin P, O'Hara R, Solymos P, Stevens M, Szoecs E, Wagner H, Barbour M, Bedward M, Bolker B, Borcard D, Carvalho G, Chirico M, De Caceres M, Durand S, Evangelista H, FitzJohn R, Friendly M, Furneaux B, Hannigan G, Hill M, Lahti L, McGlinn D, Ouellette M, Ribeiro Cunha E, Smith T, Stier A, Ter Braak C, Weedon J (2024).  vegan: Community Ecology Package. R package version 2.6-8. https://CRAN.R-project.org/package=vegan.
+
+Sedia, E., Zimmermann, G. L., & Hinesley, L. E. (2021). Salinity and Flooding Affect Mortality of Atlantic White-Cedar (Chamaecyparis thyoides) Seedlings. Tree Planters\' Notes, 64(2): 50-56. 
+
+Ward, D. B. (1989). Commercial Utilization of Atlantic White Cedar (Chamaecyparis thyoides, Cupressaceae). Economic Botany 43(3):386-415.
